@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var isActive: Bool = false
     
     var title: some View{
         VStack{
@@ -18,9 +19,9 @@ struct MainView: View {
                 .font(.caption)
                 .foregroundColor(Color(red: 0.792156862745098, green: 0.792156862745098, blue: 0.792156862745098))
                 .multilineTextAlignment(.center)
-                
+            
         }
-
+        
     }
     
     var buttonRow: some View{
@@ -32,16 +33,18 @@ struct MainView: View {
                     Image("leftpung")
                         .resizable()
                         .frame(width: 144, height: 87)
-                        //.renderingMode(.original)
+                    //.renderingMode(.original)
                     VStack(spacing: 5.0){
                         Image(systemName: "ellipsis.message.fill")
                             .resizable()
                             .foregroundColor(Color(red: 0.4, green: 0.41568627450980394, blue: 1.0))
                             .frame(width: 24, height: 24.0)
-                        Text("채팅 확인하기")
-                            .font(.system(size: 13))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(red: 0.208, green: 0.208, blue: 0.0))
+                        NavigationLink(destination: ReceiveView()) {
+                            Text("채팅 확인하기")
+                                .font(.system(size: 13))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(red: 0.208, green: 0.208, blue: 0.0))
+                        }
                     }
                     .padding(.leading, 10.0)
                 }
@@ -54,17 +57,19 @@ struct MainView: View {
                     Image("rightpung")
                         .resizable()
                         .frame(width: 144, height: 87)
-                        //.renderingMode(.original)
+                    //.renderingMode(.original)
                     VStack(spacing: 5.0){
                         Image(systemName: "plus.message.fill")
                             .resizable()
                             .foregroundColor(Color(red: 0.4, green: 0.41568627450980394, blue: 1.0))
                             .frame(width: 24, height: 24.0)
                             .rotationEffect(Angle(degrees: 0))
-                        Text("메세지 보내기")
-                            .font(.system(size: 13))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(red: 0.208, green: 0.208, blue: 0.0))
+                        NavigationLink(destination: SendView()) {
+                            Text("메세지 보내기")
+                                .font(.system(size: 13))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(red: 0.208, green: 0.208, blue: 0.0))
+                        }
                     }
                     .padding(.trailing, 10.0)
                 }
@@ -92,7 +97,7 @@ struct MainView: View {
                         .frame(width: 12, height: 12)
                 }
                 .foregroundColor(Color(hue: 0.767, saturation: 0.0, brightness: 0.523))
-
+                
                 Text("파이팅입니다 .. 파이팅 .. 짜응 ..")
                     .foregroundColor(Color(red: 0.399, green: 0.415, blue: 0.999, opacity: 0.847))
             }
@@ -103,7 +108,7 @@ struct MainView: View {
         .font(.subheadline)
     }
     
-
+    
     
     var coverImage: some View{
         Image("profileimg")
@@ -134,28 +139,30 @@ struct MainView: View {
     }
     
     var body: some View {
-        ZStack{
-            GeometryReader{ proxy in
-                coverImage
-                    .ignoresSafeArea()
-                    .frame(height: 568)
-            }
-            
-            GeometryReader{ proxy in
-                VStack(spacing: 0){
-                    Spacer()
-                    card
-                        .frame(height: 340)
+        NavigationView {
+            ZStack{
+                GeometryReader{ proxy in
+                    coverImage
+                        .ignoresSafeArea()
+                        .frame(height: 568)
                 }
-            }
-            GeometryReader{ proxy in
-                HStack(alignment: .center, spacing: 0){
-                    Spacer()
-                        .frame(width: 300)
-                    alertImage
+                
+                GeometryReader{ proxy in
+                    VStack(spacing: 0){
+                        Spacer()
+                        card
+                            .frame(height: 340)
+                    }
                 }
-                .padding(.top, 20.0)
-                .frame(width: 393.0)
+                GeometryReader{ proxy in
+                    HStack(alignment: .center, spacing: 0){
+                        Spacer()
+                            .frame(width: 300)
+                        alertImage
+                    }
+                    .padding(.top, 20.0)
+                    .frame(width: 393.0)
+                }
             }
         }
     }
