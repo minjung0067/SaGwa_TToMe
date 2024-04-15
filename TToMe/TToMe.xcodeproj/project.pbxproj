@@ -19,6 +19,7 @@
 		673BCFBC2BCB57C100ED017D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFBB2BCB57C100ED017D /* FirebaseDatabaseSwift */; };
 		673BCFBE2BCB57C100ED017D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFBD2BCB57C100ED017D /* FirebaseFirestore */; };
 		673BCFC02BCB57C100ED017D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFBF2BCB57C100ED017D /* FirebaseFirestoreSwift */; };
+		673BCFC42BCCE39800ED017D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC32BCCE39800ED017D /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		673BCFA72BCA4EDB00ED017D /* TToMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TToMeUITests.swift; sourceTree = "<group>"; };
 		673BCFA92BCA4EDB00ED017D /* TToMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TToMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		673BCFB62BCB574900ED017D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		673BCFC32BCCE39800ED017D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
 				673BCF8E2BCA4EDA00ED017D /* ContentView.swift */,
 				673BCF902BCA4EDB00ED017D /* Assets.xcassets */,
+				673BCFC32BCCE39800ED017D /* MainView.swift */,
 				673BCF922BCA4EDB00ED017D /* Preview Content */,
 			);
 			path = TToMe;
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				673BCF8F2BCA4EDA00ED017D /* ContentView.swift in Sources */,
+				673BCFC42BCCE39800ED017D /* MainView.swift in Sources */,
 				673BCF8D2BCA4EDA00ED017D /* TToMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
