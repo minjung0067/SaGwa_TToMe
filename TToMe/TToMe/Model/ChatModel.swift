@@ -44,7 +44,25 @@ struct Message: Identifiable{
 extension Chat {
     static let sampleChat = [
         Chat(person: Person(name: "Minjung", imgString: "profileimg"), messages: [
+            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 10))
+        ]),
+        Chat(person: Person(name: "Minjung2", imgString: "profileimg"), messages: [
+            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 8))
+        ]),
+        Chat(person: Person(name: "Minjung3", imgString: "profileimg"), messages: [
+            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 5))
+        ]),
+        Chat(person: Person(name: "Minjung4", imgString: "profileimg"), messages: [
+            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 4))
+        ]),
+        Chat(person: Person(name: "Minjung4", imgString: "profileimg"), messages: [
             Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3))
+        ]),
+        Chat(person: Person(name: "Minjung4", imgString: "profileimg"), messages: [
+            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 2))
+        ]),
+        Chat(person: Person(name: "Minjung4", imgString: "profileimg"), messages: [
+            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 1))
         ])
     ]
 }

@@ -118,13 +118,12 @@
 			children = (
 				673BCFF92BCD474000ED017D /* Model */,
 				673BCFB62BCB574900ED017D /* GoogleService-Info.plist */,
+				673BCFC52BCD127D00ED017D /* ReceiveView.swift */,
 				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
 				673BCF8E2BCA4EDA00ED017D /* ContentView.swift */,
 				673BCF902BCA4EDB00ED017D /* Assets.xcassets */,
 				673BCFC32BCCE39800ED017D /* MainView.swift */,
-				673BCFC52BCD127D00ED017D /* ReceiveView.swift */,
 				673BCFC72BCD138700ED017D /* SendView.swift */,
-				673BCFF72BCD46B200ED017D /* ChatRow.swift */,
 				673BCF922BCA4EDB00ED017D /* Preview Content */,
 			);
 			path = TToMe;
@@ -158,6 +157,7 @@
 		673BCFF92BCD474000ED017D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				673BCFF72BCD46B200ED017D /* ChatRow.swift */,
 				673BCFFE2BCD478000ED017D /* ChatModel.swift */,
 				673BD0002BCD499D00ED017D /* DateHelper.swift */,
 			);

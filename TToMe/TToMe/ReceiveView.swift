@@ -40,14 +40,27 @@ struct ReceiveView: View {
             }
             .padding(.horizontal)
             
-            List {
-                ForEach(array.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
-                    searchText in Text(searchText)
+            ZStack{
+                List {
+                    ForEach(0 ..< 5) { i in
+                        ChatRow(chat: Chat.sampleChat[i])
+                    }
+                }
+                .listStyle(PlainListStyle())
+                .navigationBarTitle(Text("또나"))
+                .navigationBarTitleDisplayMode(.large)
+                .resignKeyboardOnDragGesture()
+                
+                VStack{
+                    Spacer()
+                    Image("bubble")
+                        .resizable()
+                        .frame(width: 320, height: 45, alignment: .center)
                 }
             }
-            .navigationBarTitle(Text("또나"))
-            .navigationBarTitleDisplayMode(.large)
-            .resignKeyboardOnDragGesture()
+            
+            
+
         }
         
     }
