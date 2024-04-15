@@ -29,51 +29,51 @@ struct MainView: View {
             Button(action: {
                 print("left pressed")
             }) {
-                ZStack{
-                    Image("leftpung")
-                        .resizable()
-                        .frame(width: 144, height: 87)
-                    //.renderingMode(.original)
-                    VStack(spacing: 5.0){
-                        Image(systemName: "ellipsis.message.fill")
+                NavigationLink(destination: ReceiveView()) {
+                    ZStack{
+                        Image("leftpung")
                             .resizable()
-                            .foregroundColor(Color(red: 0.4, green: 0.41568627450980394, blue: 1.0))
-                            .frame(width: 24, height: 24.0)
-                        NavigationLink(destination: ReceiveView()) {
+                            .frame(width: 144, height: 87)
+                        VStack(spacing: 5.0){
+                            Image(systemName: "ellipsis.message.fill")
+                                .resizable()
+                                .foregroundColor(Color(red: 0.4, green: 0.41568627450980394, blue: 1.0))
+                                .frame(width: 24, height: 24.0)
                             Text("채팅 확인하기")
                                 .font(.system(size: 13))
                                 .fontWeight(.bold)
                                 .foregroundColor(Color(red: 0.208, green: 0.208, blue: 0.0))
                         }
+                        .padding(.leading, 10.0)
                     }
-                    .padding(.leading, 10.0)
+                    
                 }
+                
             }
             
             Button(action: {
                 print("right pressed")
             }) {
-                ZStack{
-                    Image("rightpung")
-                        .resizable()
-                        .frame(width: 144, height: 87)
-                    //.renderingMode(.original)
-                    VStack(spacing: 5.0){
-                        Image(systemName: "plus.message.fill")
+                NavigationLink(destination: SendView()) {
+                    ZStack{
+                        Image("rightpung")
                             .resizable()
-                            .foregroundColor(Color(red: 0.4, green: 0.41568627450980394, blue: 1.0))
-                            .frame(width: 24, height: 24.0)
-                            .rotationEffect(Angle(degrees: 0))
-                        NavigationLink(destination: SendView()) {
+                            .frame(width: 144, height: 87)
+                        //.renderingMode(.original)
+                        VStack(spacing: 5.0){
+                            Image(systemName: "plus.message.fill")
+                                .resizable()
+                                .foregroundColor(Color(red: 0.4, green: 0.41568627450980394, blue: 1.0))
+                                .frame(width: 24, height: 24.0)
+                                .rotationEffect(Angle(degrees: 0))
                             Text("메세지 보내기")
                                 .font(.system(size: 13))
                                 .fontWeight(.bold)
                                 .foregroundColor(Color(red: 0.208, green: 0.208, blue: 0.0))
                         }
+                        .padding(.trailing, 10.0)
                     }
-                    .padding(.trailing, 10.0)
                 }
-                .frame(width: 144, height: 87, alignment: .center)
             }
         }
         .frame(width: 316, height: 60)
@@ -113,7 +113,7 @@ struct MainView: View {
     var coverImage: some View{
         Image("profileimg")
             .resizable()
-            .scaledToFill()
+            .frame(width: 393, height: 568, alignment: .center)
     }
     
     var alertImage: some View{
@@ -144,7 +144,7 @@ struct MainView: View {
                 GeometryReader{ proxy in
                     coverImage
                         .ignoresSafeArea()
-                        .frame(height: 568)
+                    
                 }
                 
                 GeometryReader{ proxy in
@@ -160,8 +160,9 @@ struct MainView: View {
                             .frame(width: 300)
                         alertImage
                     }
-                    .padding(.top, 20.0)
-                    .frame(width: 393.0)
+                    //.padding(.top, 20.0)
+                    .frame(width: 393, alignment: .top)
+                    
                 }
             }
         }
