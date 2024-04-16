@@ -3,14 +3,13 @@ import SwiftUI
 struct SendView: View {
     
     @EnvironmentObject var viewModel: ChatsViewModel
-    
-    //let chat: Chat
+
     
     @State private var placeholder = "받는 사람 : 또나"
     @State private var text = ""
     @FocusState private var isFocused
     
-    @State private var messageIDToScroll: UUID:?
+    
     
     var body: some View {
         
@@ -72,9 +71,10 @@ struct SendView: View {
     }
     
     func sendMessage(){
-        if let message = viewModel.sendMessage(text, in: chat) {
-            text = ""
-            message
-        }
+        print("sendMessage 클릭")
+//        if let message = viewModel.sendMessage(text, in: chat) {
+//            text = ""
+//            messageIDToScroll = message.id
+//        }
     }
 }

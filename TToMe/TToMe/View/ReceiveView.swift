@@ -2,9 +2,12 @@ import SwiftUI
 
 struct ReceiveView: View {
     
-    //let chat: Chat
+
     
     //@EnvironmentObject var viewModel: ChatsViewModel
+    
+    let chat: Chat
+    
     @StateObject var viewModel = ChatsViewModel()
     
     
@@ -38,6 +41,7 @@ struct ReceiveView: View {
                 
                 Button(action: {
                     print("달력 버튼 클릭")
+
                 }) {
                     Image(systemName: "calendar")
                         .resizable()
@@ -50,26 +54,35 @@ struct ReceiveView: View {
             ZStack{
                 GeometryReader { reader in
                     ScrollView {
-                        getMessagesView(viewWidth: reader.size.width)
+                        ScrollViewReader { scrollReader in
+                            getMessagesView(viewWidth: reader.size.width)
+                                .padding(.horizontal)
+                                .onAppear {
+                                    if let messageId = chat.messages.last?.id {
+                                        scrollTo(messageID: messageId, anchor: .bottom, shouldAnimate: true, scrollReader:scrollReader)
+                                    }
+                                }
+                        }
+
                     }
                     
                 }
                 
-                //.resignKeyboardOnDragGesture()
-                
-                VStack{
-                    Spacer()
-                    Image("bubble")
-                        .resizable()
-                        .frame(width: 310, height: 45, alignment: .center)
-                        .opacity(0.5)
-                }
             }
             
             
             
         }
         
+    }
+    
+    
+    func scrollTo(messageID: UUID, anchor: UnitPoint? = nil, shouldAnimate: Bool, scrollReader: ScrollViewProxy) {
+        DispatchQueue.main.async {
+            withAnimation(shouldAnimate ? Animation.easeIn : nil) {
+                scrollReader.scrollTo(messageID, anchor: anchor)
+            }
+        }
     }
     
     let columns = [GridItem(.flexible(minimum: 1))]
@@ -120,22 +133,23 @@ struct ReceiveView: View {
             }
         }
     }
+
 }
 
 
-
-struct Receive_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ReceiveView()
-                .environment(\.colorScheme, .light)
-            
-            ReceiveView()
-                .environment(\.colorScheme, .dark)
-        }
-    }
-}
-
-#Preview {
-    ReceiveView()
-}
+//
+//struct Receive_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            ReceiveView()
+//                .environment(\.colorScheme, .light)
+//            
+//            ReceiveView()
+//                .environment(\.colorScheme, .dark)
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ReceiveView()
+//}

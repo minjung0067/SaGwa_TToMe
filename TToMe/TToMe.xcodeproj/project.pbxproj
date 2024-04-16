@@ -25,6 +25,7 @@
 		673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFFE2BCD478000ED017D /* ChatModel.swift */; };
 		673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BD0002BCD499D00ED017D /* DateHelper.swift */; };
 		67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */; };
+		67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA152BCE9F4A002751A2 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		673BCFFE2BCD478000ED017D /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		673BD0002BCD499D00ED017D /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
+		67B8CA152BCE9F4A002751A2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +121,7 @@
 				673BCFB62BCB574900ED017D /* GoogleService-Info.plist */,
 				673BCF902BCA4EDB00ED017D /* Assets.xcassets */,
 				673BCFF92BCD474000ED017D /* Model */,
-				673BCFC52BCD127D00ED017D /* ReceiveView.swift */,
-				673BCFC72BCD138700ED017D /* SendView.swift */,
-				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
-				673BCF8E2BCA4EDA00ED017D /* ContentView.swift */,
-				673BCFC32BCCE39800ED017D /* MainView.swift */,
+				67B8CA142BCE4FF2002751A2 /* View */,
 				673BCF922BCA4EDB00ED017D /* Preview Content */,
 			);
 			path = TToMe;
@@ -162,6 +160,19 @@
 				67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		67B8CA142BCE4FF2002751A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				673BCFC72BCD138700ED017D /* SendView.swift */,
+				673BCFC52BCD127D00ED017D /* ReceiveView.swift */,
+				673BCF8E2BCA4EDA00ED017D /* ContentView.swift */,
+				673BCFC32BCCE39800ED017D /* MainView.swift */,
+				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
+				67B8CA152BCE9F4A002751A2 /* SignUpView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 				673BCFC82BCD138700ED017D /* SendView.swift in Sources */,
 				673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */,
 				67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */,
+				67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */,
 				673BCF8D2BCA4EDA00ED017D /* TToMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TToMe/Preview Content\"";
@@ -490,6 +503,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = funky.TToMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TToMe/Preview Content\"";
@@ -519,6 +534,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = funky.TToMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

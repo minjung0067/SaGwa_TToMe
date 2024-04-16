@@ -10,6 +10,9 @@ import SwiftUI
 struct MainView: View {
     @State private var isActive: Bool = false
     
+    @StateObject var viewModel = ChatsViewModel()
+    
+    
     var title: some View{
         VStack{
             Text("또나")
@@ -29,7 +32,7 @@ struct MainView: View {
             Button(action: {
                 print("left pressed")
             }) {
-                NavigationLink(destination: ReceiveView()) {
+                NavigationLink(destination: ReceiveView(chat: Chat.sampleChat[0])) {
                     ZStack{
                         Image("leftpung")
                             .resizable()
@@ -92,9 +95,11 @@ struct MainView: View {
                 HStack{
                     Text("매일 7시 00분")
                         .multilineTextAlignment(.leading)
-                    Image(systemName: "pencil")
-                        .resizable()
-                        .frame(width: 12, height: 12)
+                    NavigationLink(destination: SignUpView()) {
+                        Image(systemName: "pencil")
+                            .resizable()
+                            .frame(width: 12, height: 12)
+                    }
                 }
                 .foregroundColor(Color(hue: 0.767, saturation: 0.0, brightness: 0.523))
                 
@@ -117,10 +122,16 @@ struct MainView: View {
     }
     
     var alertImage: some View{
-        Image(systemName: "bell")
-            .resizable()
-            .foregroundColor(Color(red: 238, green: 238, blue:255))
-            .frame(width: 23, height: 25, alignment: .center)
+        Button(action: {
+            print("right pressed")
+        }) {
+                Image(systemName: "bell")
+                    .resizable()
+                    .foregroundColor(Color(red: 238, green: 238, blue:255))
+                    .frame(width: 23, height: 25, alignment: .center)
+
+        }
+                
     }
     
     var card: some View{

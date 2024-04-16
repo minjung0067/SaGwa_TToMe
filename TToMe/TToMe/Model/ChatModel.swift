@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 struct Chat: Identifiable {
     var id: UUID {person.id}
@@ -50,7 +51,7 @@ extension Chat {
             Message("배고파ㅏㅏㅇ라머;ㄴ이ㅏ럼;ㅣㅏㄴㅇ러ㅁㄴㅇ리ㅏㅓㅁ;ㄴ이ㅏ럼;ㅣㅏㄴ얼;ㅣ만얼;ㅣㅏㅁ넝ㄹ;ㅣㅏㅁ넝ㄹ;ㅣㅏ먼ㅇ;ㅣ라ㅓㅁㄴ;ㅣ아럼;니아러;미나얼;ㅣ만얼;ㅣㅏㅁㄴ얼;ㅣㅏㅁ넝ㄹ;ㅣㅏ먼ㅇㄹ;ㅣ만어리;마넝ㄹ;ㅣ마넝ㄹ;ㅣㅏ먼ㅇ;리ㅏ먼이;라ㅓㅁㄴㅇ;라ㅣㅁ넝리ㅏ먼ㅇ;리ㅏ먼;이ㅏㄹㅏㅏㅏ죽게네 ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 9))
         ]),
         Chat(person: Person(name: "Minjung3", imgString: "profileimg"), messages: [
-            Message("왜이리하기싫노ㅓ ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 8))
+            Message("왜이리하기가싫으냐 ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 8))
         ]),
         Chat(person: Person(name: "Minjung4", imgString: "profileimg"), messages: [
             Message("밤새기싫어ㅏ요 ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 7))
@@ -62,7 +63,7 @@ extension Chat {
             Message("드가자 ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 2))
         ]),
         Chat(person: Person(name: "Minjung4", imgString: "profileimg"), messages: [
-            Message("Heyyy ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 1))
+            Message("Hihi ", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 1))
         ])
     ]
 }
