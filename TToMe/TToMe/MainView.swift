@@ -120,7 +120,7 @@ struct MainView: View {
         Image(systemName: "bell")
             .resizable()
             .foregroundColor(Color(red: 238, green: 238, blue:255))
-            .frame(width: 23, height: 25)
+            .frame(width: 23, height: 25, alignment: .center)
     }
     
     var card: some View{
@@ -147,23 +147,28 @@ struct MainView: View {
                     
                 }
                 
-                GeometryReader{ proxy in
+                VStack{
+                    HStack(alignment: .top, spacing: 0){
+                        Spacer()
+                            .frame(width: 300)
+                        alertImage
+                    }
+                    .position(x: 190, y: -40)
+                    .frame(width: 393, height: 25, alignment: .top)
+                    
+                    Spacer()
+                }
+
+                
+//                GeometryReader{ proxy in
                     VStack(spacing: 0){
                         Spacer()
                         card
                             .frame(height: 340)
                     }
-                }
-                GeometryReader{ proxy in
-                    HStack(alignment: .center, spacing: 0){
-                        Spacer()
-                            .frame(width: 300)
-                        alertImage
-                    }
-                    //.padding(.top, 20.0)
-                    .frame(width: 393, alignment: .top)
-                    
-                }
+  //              }
+                
+
             }
         }
     }

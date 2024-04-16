@@ -1,9 +1,16 @@
 import SwiftUI
 
 struct ReceiveView: View {
-    let array = ["1","2"]
-    @State private var searchText = ""
+    
+    //let chat: Chat
+    
+    //@EnvironmentObject var viewModel: ChatsViewModel
+    @StateObject var viewModel = ChatsViewModel()
+    
+    
+    @State private var query = ""
     @State private var showCancelButton: Bool = true
+    
     
     var body: some View {
         
@@ -13,15 +20,15 @@ struct ReceiveView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     
-                    TextField("키워드로 검색하기", text: $searchText, onEditingChanged: { isEditing in
+                    TextField("키워드로 검색하기", text: $query, onEditingChanged: { isEditing in
                     }, onCommit: {
                         print("onCommit")
                     }).foregroundColor(.primary)
                     
                     Button(action: {
-                        self.searchText = ""
+                        self.query = ""
                     }) {
-                        Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
+                        Image(systemName: "xmark.circle.fill").opacity(query == "" ? 0 : 1)
                     }
                 }
                 .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
@@ -41,28 +48,77 @@ struct ReceiveView: View {
             .padding(.horizontal)
             
             ZStack{
-                List {
-                    ForEach(0 ..< 5) { i in
-                        ChatRow(chat: Chat.sampleChat[i])
+                GeometryReader { reader in
+                    ScrollView {
+                        getMessagesView(viewWidth: reader.size.width)
                     }
+                    
                 }
-                .listStyle(PlainListStyle())
-                .navigationBarTitle(Text("또나"))
-                .navigationBarTitleDisplayMode(.large)
-                .resignKeyboardOnDragGesture()
+                
+                //.resignKeyboardOnDragGesture()
                 
                 VStack{
                     Spacer()
                     Image("bubble")
                         .resizable()
-                        .frame(width: 320, height: 45, alignment: .center)
+                        .frame(width: 310, height: 45, alignment: .center)
+                        .opacity(0.5)
                 }
             }
             
             
-
+            
         }
         
+    }
+    
+    let columns = [GridItem(.flexible(minimum: 1))]
+    
+    func getMessagesView(viewWidth: CGFloat) -> some View {
+        LazyVGrid(columns: columns, spacing: 0) {
+            ForEach(viewModel.getSortedFilteredChats(query: query)) { chat in
+                VStack(spacing: 5) {
+                    //요일
+                    Text(chat.messages.last?.date.descriptiveString() ?? "")
+                        .fontWeight(.regular)
+                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.45, opacity: 0.5))
+                        .frame(alignment: .center)
+                        .font(.footnote)
+                    
+                    HStack(spacing: 10.0){
+                        //프로필
+                        VStack(){
+                            Spacer()
+                            Image(chat.person.imgString)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height:40, alignment: .center)
+                                .clipShape(Circle())
+                            
+                        }
+                        .padding(.all, 15)
+                        HStack{
+                            ZStack{
+                                Text(chat.messages.last?.text ?? "")
+                                    .font(.system(size: 13))
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 12)
+                                    .foregroundColor(.white)
+                                    .background(Color(red: 0.399, green: 0.415, blue: 0.999, opacity: 0.847))
+                                    .cornerRadius(15)
+                            }
+                            .frame(width: viewWidth * 0.7, alignment: .leading)
+                            .padding(.vertical)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        
+                    }
+                }
+                .padding(.all, 10)
+                .padding(.bottom, 10)
+            }
+        }
     }
 }
 
@@ -77,33 +133,6 @@ struct Receive_Previews: PreviewProvider {
             ReceiveView()
                 .environment(\.colorScheme, .dark)
         }
-    }
-}
-
-// Update for iOS 15
-// MARK: - UIApplication extension for resgning keyboard on pressing the cancel buttion of the search bar
-extension UIApplication {
-    
-    func endEditing(_ force: Bool) {
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        window?.endEditing(force)
-    }
-}
-
-struct ResignKeyboardOnDragGesture: ViewModifier {
-    var gesture = DragGesture().onChanged{_ in
-        UIApplication.shared.endEditing(true)
-    }
-    func body(content: Content) -> some View {
-        content.gesture(gesture)
-    }
-}
-
-extension View {
-    func resignKeyboardOnDragGesture() -> some View {
-        return modifier(ResignKeyboardOnDragGesture())
     }
 }
 

@@ -1,8 +1,16 @@
 import SwiftUI
 
 struct SendView: View {
-    let array = ["1","2"]
-    @State private var searchText = ""
+    
+    @EnvironmentObject var viewModel: ChatsViewModel
+    
+    //let chat: Chat
+    
+    @State private var placeholder = "받는 사람 : 또나"
+    @State private var text = ""
+    @FocusState private var isFocused
+    
+    @State private var messageIDToScroll: UUID:?
     
     var body: some View {
         
@@ -11,11 +19,11 @@ struct SendView: View {
                 HStack {
                     HStack {
                         Image(systemName: "paperplane")
-                        
-                        TextField("받는 사람 : 또나", text: $searchText, onEditingChanged: { isEditing in
+                
+                        TextField("받는 사람 : 또나", text: $placeholder, onEditingChanged: { isEditing in
                         }, onCommit: {
                             print("onCommit")
-                        }).foregroundColor(.primary)
+                        }).foregroundColor(.gray)
                             .disabled(true)
                         
                     }
@@ -29,16 +37,44 @@ struct SendView: View {
                 
                 Spacer()
                 
-//                ZStack()
-//                    .frame(width: 200, height: 500, alignment: .center)
-//                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                toolbarView()
             }
             .navigationBarTitle(Text("메세지"))
-            .resignKeyboardOnDragGesture()
+            //.resignKeyboardOnDragGesture()
             .navigationBarTitleDisplayMode(.large)
     }
-}
-
-#Preview {
-    SendView()
+    
+    func toolbarView() -> some View {
+        VStack {
+            let height: CGFloat = 42
+            HStack {
+                TextField("오늘 하루는 어땠나요 ?", text: $text)
+                    .padding(.horizontal, 10)
+                    .frame(height: height)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .focused($isFocused)
+                Button(action: sendMessage) {
+                    Image("sendBtn")
+                        .resizable()
+                        .frame(width: height, height: height)
+                        .opacity(text.isEmpty ? 0.4 : 1)
+                    
+                }
+                .disabled(text.isEmpty)
+            }
+            .frame(height: height)
+            
+        }
+        .padding(.vertical)
+        .padding(.horizontal)
+        .background(.thickMaterial)
+    }
+    
+    func sendMessage(){
+        if let message = viewModel.sendMessage(text, in: chat) {
+            text = ""
+            message
+        }
+    }
 }
