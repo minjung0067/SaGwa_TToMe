@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
 
-    @StateObject var jsonModel = JsonModel()
+    @EnvironmentObject var jsonModel: JsonModel
     
     @State private var authPath = 0
 

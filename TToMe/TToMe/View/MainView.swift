@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var isActive: Bool = false
     
-    @StateObject var viewModel = ChatsViewModel()
+    @EnvironmentObject var jsonModel: JsonModel
     
     
     var title: some View{

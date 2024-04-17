@@ -21,7 +21,6 @@
 		67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA152BCE9F4A002751A2 /* SignUpView.swift */; };
 		67E2F34F2BCFE78A00FCE5C7 /* MessageTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */; };
 		67E2F3512BCFEED700FCE5C7 /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */; };
-		67E2F3552BD006B600FCE5C7 /* JsonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F3542BD006B600FCE5C7 /* JsonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		67B8CA152BCE9F4A002751A2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTimeView.swift; path = ../../../../../../../.Trash/MessageTimeView.swift; sourceTree = "<group>"; };
 		67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
-		67E2F3542BD006B600FCE5C7 /* JsonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 				673BD0002BCD499D00ED017D /* DateHelper.swift */,
 				67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */,
 				67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */,
-				67E2F3542BD006B600FCE5C7 /* JsonViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,7 +288,6 @@
 				673BCFC42BCCE39800ED017D /* MainView.swift in Sources */,
 				673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */,
 				673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */,
-				67E2F3552BD006B600FCE5C7 /* JsonViewModel.swift in Sources */,
 				673BCFC82BCD138700ED017D /* SendView.swift in Sources */,
 				67E2F34F2BCFE78A00FCE5C7 /* MessageTimeView.swift in Sources */,
 				673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */,

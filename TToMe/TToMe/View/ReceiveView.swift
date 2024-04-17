@@ -4,11 +4,11 @@ struct ReceiveView: View {
     
 
     
-    //@EnvironmentObject var viewModel: ChatsViewModel
+    @EnvironmentObject var viewModel: JsonModel
     
     let chat: Chat
     
-    @StateObject var viewModel = ChatsViewModel()
+//    @StateObject var viewModel = JsonModel()
     
     
     @State private var query = ""
@@ -89,10 +89,10 @@ struct ReceiveView: View {
     
     func getMessagesView(viewWidth: CGFloat) -> some View {
         LazyVGrid(columns: columns, spacing: 0) {
-            ForEach(viewModel.getSortedFilteredChats(query: query)) { chat in
+            ForEach(viewModel.getSortedFilteredChats(query: query), id: \.id) { chat in
                 VStack(spacing: 5) {
                     //요일
-                    Text(chat.messages.last?.date.descriptiveString() ?? "")
+                    Text(chat.writtenAt.descriptiveString())
                         .fontWeight(.regular)
                         .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.45, opacity: 0.5))
                         .frame(alignment: .center)
@@ -102,7 +102,7 @@ struct ReceiveView: View {
                         //프로필
                         VStack(){
                             Spacer()
-                            Image(chat.person.imgString)
+                            Image("profile")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 40, height:40, alignment: .center)
@@ -111,7 +111,7 @@ struct ReceiveView: View {
                         }
                         HStack{
                             ZStack{
-                                Text(chat.messages.last?.text ?? "")
+                                Text(chat.msg)
                                     .font(.system(size: 13))
                                     .padding(.horizontal)
                                     .padding(.vertical, 12)

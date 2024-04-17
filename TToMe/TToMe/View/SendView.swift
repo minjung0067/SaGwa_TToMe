@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SendView: View {
     
-    @EnvironmentObject var viewModel: ChatsViewModel
+    @EnvironmentObject var viewModel: JsonModel
 
     
     @State private var placeholder = "받는 사람 : 또나"
@@ -74,7 +74,7 @@ struct SendView: View {
         print("sendMessage 클릭")
         
         guard !text.isEmpty else { return }
-        
+        viewModel.sendMessage(text)
 //        if let message = viewModel.sendMessage(text, in: chat) {
 //            text = ""
 //            messageIDToScroll = message.id

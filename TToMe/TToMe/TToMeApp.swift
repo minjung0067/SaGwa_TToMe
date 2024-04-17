@@ -11,14 +11,21 @@ import SwiftUI
 
 @main
 struct TToMeApp: App {
-
-  var body: some Scene {
-    WindowGroup {
-      NavigationView {
-          SignUpView()
-              .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
-      }
+    @StateObject var jsonModel = JsonModel()
+    
+    var body: some Scene {
+        WindowGroup {
+            NavigationView {
+                if jsonModel.userData.isEmpty {
+                    SignUpView()
+                        .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                } else {
+                    MainView()
+                        .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                }
+            }
+        }
+        .environmentObject(jsonModel)
     }
-  }
 }
 
