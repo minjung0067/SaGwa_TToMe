@@ -72,6 +72,9 @@ struct SendView: View {
     
     func sendMessage(){
         print("sendMessage 클릭")
+        
+        guard !text.isEmpty else { return }
+        
 //        if let message = viewModel.sendMessage(text, in: chat) {
 //            text = ""
 //            messageIDToScroll = message.id

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
 
+    @StateObject var jsonModel = JsonModel()
+    
     @State private var authPath = 0
 
     /* ... */
@@ -62,7 +64,7 @@ struct SignUpView: View {
             Spacer()
         }
         .padding(.all, 10)
-        .background(Color("Color.Background").edgesIgnoringSafeArea(.all))
+        .background(Color.white.edgesIgnoringSafeArea(.all))
     }
 }
 

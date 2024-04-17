@@ -58,6 +58,7 @@ struct NameView: View {
                             .opacity(name.isEmpty ? 0.4 : 1)
                         
                     }
+                    //.alert(, isPresented: <#T##Binding<Bool>#>, actions: <#T##() -> View#>)
                     .padding(.all, 4)
                     .disabled(name.isEmpty)
                 }
@@ -76,6 +77,8 @@ struct NameView: View {
     
     func saveName() {
         print("savename")
+        
+        
     }
 }
 

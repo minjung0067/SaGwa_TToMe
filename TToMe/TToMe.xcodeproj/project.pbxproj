@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		673BCF8D2BCA4EDA00ED017D /* TToMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */; };
-		673BCF8F2BCA4EDA00ED017D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCF8E2BCA4EDA00ED017D /* ContentView.swift */; };
 		673BCF912BCA4EDB00ED017D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673BCF902BCA4EDB00ED017D /* Assets.xcassets */; };
 		673BCF942BCA4EDB00ED017D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673BCF932BCA4EDB00ED017D /* Preview Assets.xcassets */; };
 		673BCFB72BCB574900ED017D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 673BCFB62BCB574900ED017D /* GoogleService-Info.plist */; };
@@ -21,6 +20,8 @@
 		67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */; };
 		67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA152BCE9F4A002751A2 /* SignUpView.swift */; };
 		67E2F34F2BCFE78A00FCE5C7 /* MessageTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */; };
+		67E2F3512BCFEED700FCE5C7 /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */; };
+		67E2F3552BD006B600FCE5C7 /* JsonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F3542BD006B600FCE5C7 /* JsonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 /* Begin PBXFileReference section */
 		673BCF892BCA4EDA00ED017D /* TToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TToMeApp.swift; sourceTree = "<group>"; };
-		673BCF8E2BCA4EDA00ED017D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		673BCF902BCA4EDB00ED017D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		673BCF932BCA4EDB00ED017D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		673BCF992BCA4EDB00ED017D /* TToMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TToMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +58,8 @@
 		67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		67B8CA152BCE9F4A002751A2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTimeView.swift; path = ../../../../../../../.Trash/MessageTimeView.swift; sourceTree = "<group>"; };
+		67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
+		67E2F3542BD006B600FCE5C7 /* JsonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				673BCFB62BCB574900ED017D /* GoogleService-Info.plist */,
 				673BCF902BCA4EDB00ED017D /* Assets.xcassets */,
+				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
 				673BCFF92BCD474000ED017D /* Model */,
 				67B8CA142BCE4FF2002751A2 /* View */,
 				673BCF922BCA4EDB00ED017D /* Preview Content */,
@@ -129,6 +132,8 @@
 				673BCFFE2BCD478000ED017D /* ChatModel.swift */,
 				673BD0002BCD499D00ED017D /* DateHelper.swift */,
 				67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */,
+				67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */,
+				67E2F3542BD006B600FCE5C7 /* JsonViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,10 +143,8 @@
 			children = (
 				673BCFC72BCD138700ED017D /* SendView.swift */,
 				673BCFC52BCD127D00ED017D /* ReceiveView.swift */,
-				673BCF8E2BCA4EDA00ED017D /* ContentView.swift */,
 				673BCFC32BCCE39800ED017D /* MainView.swift */,
 				67B8CA152BCE9F4A002751A2 /* SignUpView.swift */,
-				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
 				6779E69B2BCEE88500E1386A /* NameView.swift */,
 				67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */,
 			);
@@ -284,10 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				673BCF8F2BCA4EDA00ED017D /* ContentView.swift in Sources */,
+				67E2F3512BCFEED700FCE5C7 /* JsonModel.swift in Sources */,
 				673BCFC42BCCE39800ED017D /* MainView.swift in Sources */,
 				673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */,
 				673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */,
+				67E2F3552BD006B600FCE5C7 /* JsonViewModel.swift in Sources */,
 				673BCFC82BCD138700ED017D /* SendView.swift in Sources */,
 				67E2F34F2BCFE78A00FCE5C7 /* MessageTimeView.swift in Sources */,
 				673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */,

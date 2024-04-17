@@ -15,8 +15,8 @@ struct TToMeApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        SignUpView()
-              //.onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+          SignUpView()
+              .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
       }
     }
   }
