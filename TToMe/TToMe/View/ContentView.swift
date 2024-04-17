@@ -1,24 +1,21 @@
 //
 //  ContentView.swift
-//  TToMe
+//  Chats
 //
-//  Created by Minjung Lee on 4/13/24.
+//  Created by App-Designer2 . on 25.01.20.
+//  Copyright © 2020 App-Designer2 . All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text("hello")
     }
 }
-//
-//#Preview {
-//    MainView(chat: chat)
-//}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-
 struct SignUpView: View {
-    @State private var tab = 0
-    @State var index = 0
-    @State private var image = UIImage()
-    @State private var isPhotoPickerPresented = false
-    
+
+    @State private var authPath = 0
+
+    /* ... */
+
     var body: some View {
-        
         VStack {
             Spacer()
                 .frame(height: 100)
@@ -27,8 +25,9 @@ struct SignUpView: View {
                 Spacer(minLength: 0)
             }
             .padding(.horizontal)
+            .padding(.bottom, 5)
             HStack {
-                Text("또나가 당신을 어떻게 불러주길 바라나요?")
+                Text("또나에게 당신에 대해 알려주세요 !")
                     .font(.caption)
                     .fontWeight(.regular)
                     .foregroundColor(.gray)
@@ -36,80 +35,40 @@ struct SignUpView: View {
             }
             .padding(.horizontal)
             
+            Picker(selection: $authPath, label: Text("Authentication Path")) {
+                Text("이름").tag(0)
+                Text("메세지 타임").tag(1)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal, 30)
+            .padding(.top, 30)
+
+
+            if authPath == 0 {
+                NameView(/* ... */)
+                    //.animation(.default)
+                    .transition(.move(edge: .leading))
+                    .padding()
+                    .frame(height: 500)
+            }
+            if authPath == 1 {
+                MessageTimeView(/* ... */)
+                    //.animation(.default)
+                    .transition(.move(edge: .trailing))
+                    .padding()
+                    .frame(height: 500)
+            }
+
             Spacer()
-                .frame(height: 30)
-            
-            HStack{
-                Picker(selection: $tab, label: Text("")) {
-                    Text("이름").tag(0)
-                    Text("메세지 타임").tag(1)
-                }.pickerStyle(SegmentedPickerStyle())
-            }
-            .padding(.all, 10)
-            .padding(.horizontal, 20.0)
-
-            VStack {
-                Image(uiImage: self.image)
-                    .resizable()
-                    .cornerRadius(100)
-                    .frame(width: 200, height: 200)
-                    .background(Color.white)
-                    .aspectRatio(contentMode: .fill)
-                    .clipShape(Circle())
-                Text("Pick a photo")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 40)
-                    .cornerRadius(10)
-                    .foregroundColor(.black)
-                    .onTapGesture {
-                        isPhotoPickerPresented.toggle()
-                    }
-            }
-            .sheet(isPresented: $isPhotoPickerPresented) {
-                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-            }
         }
-        .navigationBarTitleDisplayMode(.large)
         .padding(.all, 10)
+        .background(Color("Color.Background").edgesIgnoringSafeArea(.all))
     }
 }
 
-struct ImagePicker: UIViewControllerRepresentable {
-    @Environment(\.presentationMode) private var presentationMode
-    var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    @Binding var selectedImage: UIImage
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.sourceType = sourceType
-        picker.delegate = context.coordinator
-        picker.allowsEditing = false
-        return picker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {}
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        var parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                parent.selectedImage = image
-            }
-            parent.presentationMode.wrappedValue.dismiss()
-        }
-    }
-}
 
 #Preview {
     SignUpView()
 }
+

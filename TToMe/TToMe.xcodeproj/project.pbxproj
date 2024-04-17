@@ -11,21 +11,16 @@
 		673BCF8F2BCA4EDA00ED017D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCF8E2BCA4EDA00ED017D /* ContentView.swift */; };
 		673BCF912BCA4EDB00ED017D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673BCF902BCA4EDB00ED017D /* Assets.xcassets */; };
 		673BCF942BCA4EDB00ED017D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673BCF932BCA4EDB00ED017D /* Preview Assets.xcassets */; };
-		673BCF9E2BCA4EDB00ED017D /* TToMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCF9D2BCA4EDB00ED017D /* TToMeTests.swift */; };
-		673BCFA82BCA4EDB00ED017D /* TToMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFA72BCA4EDB00ED017D /* TToMeUITests.swift */; };
-		673BCFAA2BCA4EDB00ED017D /* TToMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFA92BCA4EDB00ED017D /* TToMeUITestsLaunchTests.swift */; };
 		673BCFB72BCB574900ED017D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 673BCFB62BCB574900ED017D /* GoogleService-Info.plist */; };
-		673BCFBA2BCB57C100ED017D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFB92BCB57C100ED017D /* FirebaseDatabase */; };
-		673BCFBC2BCB57C100ED017D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFBB2BCB57C100ED017D /* FirebaseDatabaseSwift */; };
-		673BCFBE2BCB57C100ED017D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFBD2BCB57C100ED017D /* FirebaseFirestore */; };
-		673BCFC02BCB57C100ED017D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 673BCFBF2BCB57C100ED017D /* FirebaseFirestoreSwift */; };
 		673BCFC42BCCE39800ED017D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC32BCCE39800ED017D /* MainView.swift */; };
 		673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC52BCD127D00ED017D /* ReceiveView.swift */; };
 		673BCFC82BCD138700ED017D /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC72BCD138700ED017D /* SendView.swift */; };
 		673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFFE2BCD478000ED017D /* ChatModel.swift */; };
 		673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BD0002BCD499D00ED017D /* DateHelper.swift */; };
+		6779E69C2BCEE88500E1386A /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6779E69B2BCEE88500E1386A /* NameView.swift */; };
 		67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */; };
 		67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA152BCE9F4A002751A2 /* SignUpView.swift */; };
+		67E2F34D2BCFDBC000FCE5C7 /* MessageTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F34C2BCFDBC000FCE5C7 /* MessageTimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,18 +47,17 @@
 		673BCF902BCA4EDB00ED017D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		673BCF932BCA4EDB00ED017D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		673BCF992BCA4EDB00ED017D /* TToMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TToMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		673BCF9D2BCA4EDB00ED017D /* TToMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TToMeTests.swift; sourceTree = "<group>"; };
 		673BCFA32BCA4EDB00ED017D /* TToMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TToMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		673BCFA72BCA4EDB00ED017D /* TToMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TToMeUITests.swift; sourceTree = "<group>"; };
-		673BCFA92BCA4EDB00ED017D /* TToMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TToMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		673BCFB62BCB574900ED017D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		673BCFC32BCCE39800ED017D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		673BCFC52BCD127D00ED017D /* ReceiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveView.swift; sourceTree = "<group>"; };
 		673BCFC72BCD138700ED017D /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		673BCFFE2BCD478000ED017D /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		673BD0002BCD499D00ED017D /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		6779E69B2BCEE88500E1386A /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		67B8CA152BCE9F4A002751A2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		67E2F34C2BCFDBC000FCE5C7 /* MessageTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				673BCFBC2BCB57C100ED017D /* FirebaseDatabaseSwift in Frameworks */,
-				673BCFBA2BCB57C100ED017D /* FirebaseDatabase in Frameworks */,
-				673BCFBE2BCB57C100ED017D /* FirebaseFirestore in Frameworks */,
-				673BCFC02BCB57C100ED017D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				673BCF8B2BCA4EDA00ED017D /* TToMe */,
-				673BCF9C2BCA4EDB00ED017D /* TToMeTests */,
-				673BCFA62BCA4EDB00ED017D /* TToMeUITests */,
 				673BCF8A2BCA4EDA00ED017D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,23 +123,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		673BCF9C2BCA4EDB00ED017D /* TToMeTests */ = {
-			isa = PBXGroup;
-			children = (
-				673BCF9D2BCA4EDB00ED017D /* TToMeTests.swift */,
-			);
-			path = TToMeTests;
-			sourceTree = "<group>";
-		};
-		673BCFA62BCA4EDB00ED017D /* TToMeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				673BCFA72BCA4EDB00ED017D /* TToMeUITests.swift */,
-				673BCFA92BCA4EDB00ED017D /* TToMeUITestsLaunchTests.swift */,
-			);
-			path = TToMeUITests;
-			sourceTree = "<group>";
-		};
 		673BCFF92BCD474000ED017D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +140,10 @@
 				673BCFC52BCD127D00ED017D /* ReceiveView.swift */,
 				673BCF8E2BCA4EDA00ED017D /* ContentView.swift */,
 				673BCFC32BCCE39800ED017D /* MainView.swift */,
-				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
 				67B8CA152BCE9F4A002751A2 /* SignUpView.swift */,
+				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
+				6779E69B2BCEE88500E1386A /* NameView.swift */,
+				67E2F34C2BCFDBC000FCE5C7 /* MessageTimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,10 +165,6 @@
 			);
 			name = TToMe;
 			packageProductDependencies = (
-				673BCFB92BCB57C100ED017D /* FirebaseDatabase */,
-				673BCFBB2BCB57C100ED017D /* FirebaseDatabaseSwift */,
-				673BCFBD2BCB57C100ED017D /* FirebaseFirestore */,
-				673BCFBF2BCB57C100ED017D /* FirebaseFirestoreSwift */,
 			);
 			productName = TToMe;
 			productReference = 673BCF892BCA4EDA00ED017D /* TToMe.app */;
@@ -320,8 +289,10 @@
 				673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */,
 				673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */,
 				673BCFC82BCD138700ED017D /* SendView.swift in Sources */,
+				67E2F34D2BCFDBC000FCE5C7 /* MessageTimeView.swift in Sources */,
 				673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */,
 				67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */,
+				6779E69C2BCEE88500E1386A /* NameView.swift in Sources */,
 				67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */,
 				673BCF8D2BCA4EDA00ED017D /* TToMeApp.swift in Sources */,
 			);
@@ -331,7 +302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				673BCF9E2BCA4EDB00ED017D /* TToMeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +309,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				673BCFAA2BCA4EDB00ED017D /* TToMeUITestsLaunchTests.swift in Sources */,
-				673BCFA82BCA4EDB00ED017D /* TToMeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,29 +636,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		673BCFB92BCB57C100ED017D /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 673BCFB82BCB57C100ED017D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		673BCFBB2BCB57C100ED017D /* FirebaseDatabaseSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 673BCFB82BCB57C100ED017D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabaseSwift;
-		};
-		673BCFBD2BCB57C100ED017D /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 673BCFB82BCB57C100ED017D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		673BCFBF2BCB57C100ED017D /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 673BCFB82BCB57C100ED017D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 673BCF812BCA4EDA00ED017D /* Project object */;
 }

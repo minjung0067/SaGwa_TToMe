@@ -109,7 +109,6 @@ struct ReceiveView: View {
                                 .clipShape(Circle())
                             
                         }
-                        .padding(.all, 15)
                         HStack{
                             ZStack{
                                 Text(chat.messages.last?.text ?? "")
@@ -128,7 +127,7 @@ struct ReceiveView: View {
                         
                     }
                 }
-                .padding(.all, 10)
+                .padding(.all, 5)
                 .padding(.bottom, 10)
             }
         }
@@ -149,7 +148,7 @@ struct ReceiveView: View {
 //        }
 //    }
 //}
-//
+
 //#Preview {
 //    ReceiveView()
 //}

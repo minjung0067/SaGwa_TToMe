@@ -17,9 +17,10 @@ struct MainView: View {
         VStack{
             Text("또나")
                 .font(.system(size: 31, weight: .black))
+                .fontWeight(.heavy)
                 .foregroundColor(Color(hue: 0.144, saturation: 0.979, brightness: 0.131))
             Text("이민펑키")
-                .font(.caption)
+                .font(.body)
                 .foregroundColor(Color(red: 0.792156862745098, green: 0.792156862745098, blue: 0.792156862745098))
                 .multilineTextAlignment(.center)
             
@@ -95,11 +96,12 @@ struct MainView: View {
                 HStack{
                     Text("매일 7시 00분")
                         .multilineTextAlignment(.leading)
-                    NavigationLink(destination: SignUpView()) {
+                    NavigationLink(destination: SignUpView().navigationBarBackButtonHidden(true)) {
                         Image(systemName: "pencil")
                             .resizable()
                             .frame(width: 12, height: 12)
                     }
+                    
                 }
                 .foregroundColor(Color(hue: 0.767, saturation: 0.0, brightness: 0.523))
                 
@@ -129,6 +131,7 @@ struct MainView: View {
                     .resizable()
                     .foregroundColor(Color(red: 238, green: 238, blue:255))
                     .frame(width: 23, height: 25, alignment: .center)
+                    .padding(.top, 120)
 
         }
                 
@@ -164,7 +167,7 @@ struct MainView: View {
                             .frame(width: 300)
                         alertImage
                     }
-                    .position(x: 190, y: -40)
+                    .position(x: 190, y: -30)
                     .frame(width: 393, height: 25, alignment: .top)
                     
                     Spacer()
