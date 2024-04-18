@@ -6,7 +6,7 @@ struct ReceiveView: View {
     
     @EnvironmentObject var viewModel: JsonModel
     
-    let chat: Chat
+    //let chat: Chat
     
 //    @StateObject var viewModel = JsonModel()
     
@@ -58,9 +58,9 @@ struct ReceiveView: View {
                             getMessagesView(viewWidth: reader.size.width)
                                 .padding(.horizontal)
                                 .onAppear {
-                                    if let messageId = chat.messages.last?.id {
-                                        scrollTo(messageID: messageId, anchor: .bottom, shouldAnimate: true, scrollReader:scrollReader)
-                                    }
+//                                    if let messageId = JsonModel.msg.?.id {
+//                                        scrollTo(messageID: messageId, anchor: .bottom, shouldAnimate: true, scrollReader:scrollReader)
+//                                    }
                                 }
                         }
 

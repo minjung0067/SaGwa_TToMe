@@ -14,10 +14,8 @@
 		673BCFC42BCCE39800ED017D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC32BCCE39800ED017D /* MainView.swift */; };
 		673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC52BCD127D00ED017D /* ReceiveView.swift */; };
 		673BCFC82BCD138700ED017D /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC72BCD138700ED017D /* SendView.swift */; };
-		673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFFE2BCD478000ED017D /* ChatModel.swift */; };
 		673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BD0002BCD499D00ED017D /* DateHelper.swift */; };
 		6779E69C2BCEE88500E1386A /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6779E69B2BCEE88500E1386A /* NameView.swift */; };
-		67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */; };
 		67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B8CA152BCE9F4A002751A2 /* SignUpView.swift */; };
 		67E2F34F2BCFE78A00FCE5C7 /* MessageTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */; };
 		67E2F3512BCFEED700FCE5C7 /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */; };
@@ -51,10 +49,8 @@
 		673BCFC32BCCE39800ED017D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		673BCFC52BCD127D00ED017D /* ReceiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveView.swift; sourceTree = "<group>"; };
 		673BCFC72BCD138700ED017D /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
-		673BCFFE2BCD478000ED017D /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		673BD0002BCD499D00ED017D /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		6779E69B2BCEE88500E1386A /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
-		67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		67B8CA152BCE9F4A002751A2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		67E2F34E2BCFE78A00FCE5C7 /* MessageTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTimeView.swift; path = ../../../../../../../.Trash/MessageTimeView.swift; sourceTree = "<group>"; };
 		67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
@@ -127,9 +123,7 @@
 		673BCFF92BCD474000ED017D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				673BCFFE2BCD478000ED017D /* ChatModel.swift */,
 				673BD0002BCD499D00ED017D /* DateHelper.swift */,
-				67B8CA122BCD7A92002751A2 /* ChatsViewModel.swift */,
 				67E2F3502BCFEED700FCE5C7 /* JsonModel.swift */,
 			);
 			path = Model;
@@ -287,11 +281,9 @@
 				67E2F3512BCFEED700FCE5C7 /* JsonModel.swift in Sources */,
 				673BCFC42BCCE39800ED017D /* MainView.swift in Sources */,
 				673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */,
-				673BCFFF2BCD478000ED017D /* ChatModel.swift in Sources */,
 				673BCFC82BCD138700ED017D /* SendView.swift in Sources */,
 				67E2F34F2BCFE78A00FCE5C7 /* MessageTimeView.swift in Sources */,
 				673BD0012BCD499D00ED017D /* DateHelper.swift in Sources */,
-				67B8CA132BCD7A92002751A2 /* ChatsViewModel.swift in Sources */,
 				6779E69C2BCEE88500E1386A /* NameView.swift in Sources */,
 				67B8CA162BCE9F4A002751A2 /* SignUpView.swift in Sources */,
 				673BCF8D2BCA4EDA00ED017D /* TToMeApp.swift in Sources */,

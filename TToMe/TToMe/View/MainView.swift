@@ -33,7 +33,7 @@ struct MainView: View {
             Button(action: {
                 print("left pressed")
             }) {
-                NavigationLink(destination: ReceiveView(chat: Chat.sampleChat[0])) {
+                NavigationLink(destination: ReceiveView()) {
                     ZStack{
                         Image("leftpung")
                             .resizable()

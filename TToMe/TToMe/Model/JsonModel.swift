@@ -15,65 +15,8 @@ class JsonModel: ObservableObject {
     func fetchData() {
         readUser(filename: "userData.json")
         readMessage(filename: "chatData.json")
-//        let countOfUsersBeforeWriting = userData.count
-//        let countOfChatsBeforeWriting = chatData.count
-//        userData = [
-//            .init(uid: UUID(), name: "Josh", messageTime: Date()),
-//            .init(uid: UUID(), name: "Katy", messageTime: Date()),
-//            .init(uid: UUID(), name: "Logan", messageTime: Date()),
-//            .init(uid: UUID(), name: "Miguel", messageTime: Date())
-//        ]
-//        chatData = [
-//            .init(mid: UUID(), msg: "1번 ", writtenAt: Date.now),
-//            .init(mid: UUID(), msg: "2번", writtenAt: Date.now),
-//            .init(mid: UUID(), msg: "3번", writtenAt: Date.now),
-//        ]
-//        
-//        writeUser(array: userData, filename: "userData.json")
-//        writeChat(array: chatData, filename: "chatData.json")
-//        userData = readUser(filename: "userData.json") ?? []
-//        chatData = readUser(filename: "chatData.json") ?? []
-//        info = """
-//        Before writing:
-//        Total # of users: \(countOfUsersBeforeWriting)
-//        Total # of users: \(countOfChatsBeforeWriting)
-//        After writing:
-//        Total # of users: \(userData[0])
-//        Total # of users: \(chatData[0].msg)
-//        """
     }
-    
-    // Read data from JSON
-//    func readUser<T: Codable>(filename: String) -> T? {
-//        var data: Data?
-//        var file: URL
-//        
-//        //get file directory
-//        do {
-//            file = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//                .appendingPathComponent(filename)
-//        } catch {
-//            fatalError("Coudn't read or create \(filename): \(error.localizedDescription)")
-//        }
-//        
-//        //get data
-//        do {
-//            data = try Data(contentsOf: file)
-//        } catch {
-//            print("Couldn't load \(filename) from main bundle or document directory :\n\(error)")
-//        }
-//        
-//        guard data != nil else { return nil }
-//        
-//        //decode data (convert data to model)
-//        do {
-//            let decoder = JSONDecoder()
-//            print("Reading...  📖: \(file.description)")
-//            return try decoder.decode(T.self, from: data!)
-//        } catch {
-//            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
-//        }
-//    }
+
     func readUser(filename: String) {
         var data: Data?
         var file: URL
@@ -223,18 +166,3 @@ class JsonModel: ObservableObject {
     }
     
 }
-//saveUser(name: , messageTime: )
-//saveUser(,)
-//
-//saveUser(name: name, messageTime: messageTime)
-//saveUser(name, messageTime)
-
-//sum(a, b)
-//userInfo("leeo", 10)
-//userInfo(name: "leeo", age: 10)
-
-//struct JsonModel_Preview: PreviewProvider {
-//    static var previews: some View {
-//        JsonTestModel()
-//    }
-//}
