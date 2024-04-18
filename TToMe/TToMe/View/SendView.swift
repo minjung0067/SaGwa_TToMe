@@ -7,6 +7,10 @@ struct SendView: View {
     
     @State private var placeholder = "받는 사람 : 또나"
     @State private var text = ""
+    @State private var isSent = false
+    @State private var isActivate = false
+    
+    @State private var waitingText = "또나가 메세지를 확인하고 있어요."
     @FocusState private var isFocused
     
     
@@ -34,6 +38,25 @@ struct SendView: View {
                 }
                 .padding(.horizontal)
                 
+                HStack{
+                    ZStack{
+                        if isSent {
+                            HStack(alignment: .center){
+                                Text("오늘의 메세지를 이미 전송했어요")
+                                    .font(.system(size: 13))
+                                    .foregroundColor(.gray)
+                                    
+                            }
+
+                        }
+
+                    }
+                    .frame(width: 300 * 0.7, alignment: .trailing)
+                    .padding(.vertical)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                
                 Spacer()
                 
                 toolbarView()
@@ -47,12 +70,13 @@ struct SendView: View {
         VStack {
             let height: CGFloat = 42
             HStack {
-                TextField("오늘 하루는 어땠나요 ?", text: $text)
+                TextField(waitingText, text: $text)
                     .padding(.horizontal, 10)
                     .frame(height: height)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .focused($isFocused)
+                    .disabled(isActivate)
                 Button(action: sendMessage) {
                     Image("sendBtn")
                         .resizable()
@@ -72,9 +96,15 @@ struct SendView: View {
     
     func sendMessage(){
         print("sendMessage 클릭")
-        
+    
         guard !text.isEmpty else { return }
         viewModel.sendMessage(text)
+        text = ""
+        isSent.toggle()
+        isActivate.toggle()
+        waitingText = "또나가 메세지를 확인하고 있어요."
+        
+        
 //        if let message = viewModel.sendMessage(text, in: chat) {
 //            text = ""
 //            messageIDToScroll = message.id

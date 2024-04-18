@@ -10,7 +10,8 @@ import SwiftUI
 struct MainView: View {
     @State private var isActive: Bool = false
     
-    @EnvironmentObject var jsonModel: JsonModel
+    @EnvironmentObject var viewModel: JsonModel
+    
     
     
     var title: some View{
@@ -96,7 +97,9 @@ struct MainView: View {
                 HStack{
                     Text("매일 7시 00분")
                         .multilineTextAlignment(.leading)
-                    NavigationLink(destination: SignUpView(isEditing: false).navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: SignUpView(isEditing: false)
+                        .navigationBarBackButtonHidden(false))
+                    {
                         Image(systemName: "pencil")
                             .resizable()
                             .frame(width: 12, height: 12)
@@ -105,7 +108,7 @@ struct MainView: View {
                 }
                 .foregroundColor(Color(hue: 0.767, saturation: 0.0, brightness: 0.523))
                 
-                Text("파이팅입니다 .. 파이팅 .. 짜응 ..")
+                Text(viewModel.chatData.last?.msg ?? "")
                     .foregroundColor(Color(red: 0.399, green: 0.415, blue: 0.999, opacity: 0.847))
             }
             .font(.system(size: 14))
