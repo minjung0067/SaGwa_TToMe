@@ -12,6 +12,15 @@ struct SignUpView: View {
     @EnvironmentObject var jsonModel: JsonModel
     
     @State private var authPath = 0
+    @State private var name: String = ""
+    @State private var messageTime: Date = Date.now
+    
+    
+    var isEditing: Bool
+    
+    init(isEditing: Bool) {
+        self.isEditing = isEditing
+    }
 
     /* ... */
 
@@ -44,23 +53,29 @@ struct SignUpView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal, 30)
             .padding(.top, 30)
+//            .fullScreenCover(isPresented: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, content: {
+//                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+//            })
 
 
             if authPath == 0 {
-                NameView(/* ... */)
+                NameView(name: $name,
+                         authPath: $authPath)
                     //.animation(.default)
                     .transition(.move(edge: .leading))
                     .padding()
                     .frame(height: 500)
-            }
-            if authPath == 1 {
-                MessageTimeView(/* ... */)
+            } else if authPath == 1 {
+                MessageTimeView(name: $name, messageTime: $messageTime)
                     //.animation(.default)
                     .transition(.move(edge: .trailing))
                     .padding()
                     .frame(height: 500)
             }
 
+            if isEditing {
+                
+            }
             Spacer()
         }
         .padding(.all, 10)
@@ -71,6 +86,6 @@ struct SignUpView: View {
 
 
 #Preview {
-    SignUpView()
+    SignUpView(isEditing: true)
 }
 

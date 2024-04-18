@@ -15,9 +15,9 @@ struct TToMeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationStack {
                 if jsonModel.userData.isEmpty {
-                    SignUpView()
+                    SignUpView(isEditing: false)
                         .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
                 } else {
                     MainView()

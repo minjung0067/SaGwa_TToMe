@@ -73,6 +73,7 @@ struct ReceiveView: View {
             
             
         }
+        .navigationBarTitle(Text("또나"))
         
     }
     

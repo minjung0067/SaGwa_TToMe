@@ -96,7 +96,7 @@ struct MainView: View {
                 HStack{
                     Text("매일 7시 00분")
                         .multilineTextAlignment(.leading)
-                    NavigationLink(destination: SignUpView().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: SignUpView(isEditing: false).navigationBarBackButtonHidden(true)) {
                         Image(systemName: "pencil")
                             .resizable()
                             .frame(width: 12, height: 12)
@@ -153,7 +153,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack{
                 GeometryReader{ proxy in
                     coverImage

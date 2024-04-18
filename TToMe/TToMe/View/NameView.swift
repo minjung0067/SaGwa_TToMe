@@ -10,14 +10,21 @@ import PhotosUI
 
 
 struct NameView: View {
+    
     @State private var tab = 0
     @State var index = 0
     @State private var image = UIImage()
     @State private var isPhotoPickerPresented = false
     let height: CGFloat = 42
     
+    @EnvironmentObject var viewModel: JsonModel
+    
     @State private var placeholder = "네 이름을 알려줘!"
-    @State private var name = ""
+    @Binding var name: String
+    @Binding var authPath: Int
+    
+    //@Binding var checked: Bool
+    
     @FocusState private var isFocused
     
     var body: some View {
@@ -52,7 +59,7 @@ struct NameView: View {
                 HStack(alignment: .center){
                     Spacer()
                     Button(action: saveName) {
-                        Image("checkbtn")
+                        Image("nextbtn")
                             .resizable()
                             .frame(width: height, height: height)
                             .opacity(name.isEmpty ? 0.4 : 1)
@@ -77,8 +84,9 @@ struct NameView: View {
     
     func saveName() {
         print("savename")
-        
-        
+        authPath = 1
+        guard !name.isEmpty else { return }
+        //viewModel.sendMessage(name)
     }
 }
 
@@ -137,6 +145,6 @@ extension UIApplication: UIGestureRecognizerDelegate {
     }
 }
 #Preview {
-    NameView()
+    NameView(name: .constant("펑키"), authPath: .constant(0))
 }
 

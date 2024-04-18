@@ -105,38 +105,6 @@ class JsonModel: ObservableObject {
             fatalError("Couldn't parse \(filename) as \([User].self):\n\(error)")
         }
     }
-    
-    // Read data from JSON
-//    func readMessage<T: Codable>(filename: String) -> T? {
-//        var data: Data?
-//        var file: URL
-//        
-//        //get file directory
-//        do {
-//            file = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//                .appendingPathComponent(filename)
-//        } catch {
-//            fatalError("Coudn't read or create \(filename): \(error.localizedDescription)")
-//        }
-//        
-//        //get data
-//        do {
-//            data = try Data(contentsOf: file)
-//        } catch {
-//            print("Couldn't load \(filename) from main bundle or document directory :\n\(error)")
-//        }
-//        
-//        guard data != nil else { return nil }
-//        
-//        //decode data (convert data to model)
-//        do {
-//            let decoder = JSONDecoder()
-//            print("Reading...  📖: \(file.description)")
-//            return try decoder.decode(T.self, from: data!)
-//        } catch {
-//            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
-//        }
-//    }
     func readMessage(filename: String) {
         var data: Data?
         var file: URL
@@ -228,14 +196,22 @@ class JsonModel: ObservableObject {
     }
     
     func sendMessage(_ text: String) {
-        guard !text.isEmpty else { return }
+        //guard !text.isEmpty else { return }
 //        if text.isEmpty { return }
         chatData.append(JsonModel.Chat(msg: text, writtenAt: .now))
         writeChat(filename: "chatData.json")
     }
+    func saveUser(_ name: String, _ messageTime: Date) {
+        //guard !text.isEmpty else { return }
+//        if text.isEmpty { return }
+        userData.append(JsonModel.User(name: name, messageTime: messageTime))
+        writeUser(filename: "userData.json")
+    }
+    // saveUser(name, time)
+    // saveUser(name: name, time: time)
     
-    struct User: Codable {
-        var uid: UUID = UUID()
+    struct User: Codable, Identifiable {
+        var id: UUID = UUID()
         var name: String
         var messageTime: Date
     }
@@ -247,6 +223,15 @@ class JsonModel: ObservableObject {
     }
     
 }
+//saveUser(name: , messageTime: )
+//saveUser(,)
+//
+//saveUser(name: name, messageTime: messageTime)
+//saveUser(name, messageTime)
+
+//sum(a, b)
+//userInfo("leeo", 10)
+//userInfo(name: "leeo", age: 10)
 
 //struct JsonModel_Preview: PreviewProvider {
 //    static var previews: some View {
