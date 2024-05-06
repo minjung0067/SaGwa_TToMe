@@ -1,6 +1,7 @@
 //
-//  File.swift
-//  TToMe
+//  DateHelper.swift
+//
+//  날짜, 시간
 //
 //  Created by Minjung Lee on 4/15/24.
 //
@@ -12,7 +13,6 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         //formatter.dateStyle = dateStyle
-   
         
         
         let daysBetween = self.daysBetween(date: Date())

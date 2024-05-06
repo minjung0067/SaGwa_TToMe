@@ -11,18 +11,19 @@ struct SignUpView: View {
 
     @EnvironmentObject var jsonModel: JsonModel
     
+    // name or msg picker
     @State private var authPath = 0
+    
     @State private var name: String = ""
     @State private var messageTime: Date = Date.now
+    @State private var isPickerDisable = true
     
-    
+    // isEditing 메인화면에서 수정하는 상황일 때 true
     var isEditing: Bool
     
     init(isEditing: Bool) {
         self.isEditing = isEditing
     }
-
-    /* ... */
 
     var body: some View {
         VStack {
@@ -46,20 +47,20 @@ struct SignUpView: View {
             }
             .padding(.horizontal)
             
-            Picker(selection: $authPath, label: Text("Authentication Path")) {
+            
+            // Mark: picker
+            Picker(selection: $authPath, label: Text("name or msg time")) {
                 Text("이름").tag(0)
                 Text("메세지 타임").tag(1)
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal, 30)
             .padding(.top, 30)
-//            .fullScreenCover(isPresented: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, content: {
-//                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
-//            })
+            .disabled(isPickerDisable)
 
 
             if authPath == 0 {
-                NameView(name: $name,
+                NameView(isPickerDisable: $isPickerDisable, name: $name,
                          authPath: $authPath)
                     //.animation(.default)
                     .transition(.move(edge: .leading))
@@ -86,6 +87,6 @@ struct SignUpView: View {
 
 
 #Preview {
-    SignUpView(isEditing: true)
+    SignUpView(isEditing: false)
 }
 

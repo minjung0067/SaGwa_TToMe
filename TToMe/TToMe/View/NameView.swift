@@ -15,6 +15,8 @@ struct NameView: View {
     @State var index = 0
     @State private var image = UIImage()
     @State private var isPhotoPickerPresented = false
+    @Binding var isPickerDisable: Bool
+    
     let height: CGFloat = 42
     
     @EnvironmentObject var viewModel: JsonModel
@@ -44,9 +46,7 @@ struct NameView: View {
             }
             .padding(.bottom, 20.0)
             .frame(height: 250)
-            .sheet(isPresented: $isPhotoPickerPresented) {
-                //ImagePicker(show: .photoLibrary, image: self.$image)
-            }
+            
             ZStack {
                 TextField("이름", text: $name)
                     .multilineTextAlignment(.center)
@@ -56,6 +56,7 @@ struct NameView: View {
                     .background(Color(hue: 0.663, saturation: 0.538, brightness: 0.928, opacity: 0.365))
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .focused($isFocused)
+                
                 HStack(alignment: .center){
                     Spacer()
                     Button(action: saveName) {
@@ -86,6 +87,7 @@ struct NameView: View {
         print("savename")
         authPath = 1
         guard !name.isEmpty else { return }
+        isPickerDisable = false
         //viewModel.sendMessage(name)
     }
 }
@@ -145,6 +147,6 @@ extension UIApplication: UIGestureRecognizerDelegate {
     }
 }
 #Preview {
-    NameView(name: .constant("펑키"), authPath: .constant(0))
+    NameView(isPickerDisable: .constant(true), name: .constant("펑키"), authPath: .constant(0))
 }
 

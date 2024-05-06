@@ -10,7 +10,6 @@
 		673BCF8D2BCA4EDA00ED017D /* TToMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */; };
 		673BCF912BCA4EDB00ED017D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673BCF902BCA4EDB00ED017D /* Assets.xcassets */; };
 		673BCF942BCA4EDB00ED017D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673BCF932BCA4EDB00ED017D /* Preview Assets.xcassets */; };
-		673BCFB72BCB574900ED017D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 673BCFB62BCB574900ED017D /* GoogleService-Info.plist */; };
 		673BCFC42BCCE39800ED017D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC32BCCE39800ED017D /* MainView.swift */; };
 		673BCFC62BCD127D00ED017D /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC52BCD127D00ED017D /* ReceiveView.swift */; };
 		673BCFC82BCD138700ED017D /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673BCFC72BCD138700ED017D /* SendView.swift */; };
@@ -45,7 +44,6 @@
 		673BCF932BCA4EDB00ED017D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		673BCF992BCA4EDB00ED017D /* TToMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TToMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		673BCFA32BCA4EDB00ED017D /* TToMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TToMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		673BCFB62BCB574900ED017D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		673BCFC32BCCE39800ED017D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		673BCFC52BCD127D00ED017D /* ReceiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveView.swift; sourceTree = "<group>"; };
 		673BCFC72BCD138700ED017D /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		673BCF8B2BCA4EDA00ED017D /* TToMe */ = {
 			isa = PBXGroup;
 			children = (
-				673BCFB62BCB574900ED017D /* GoogleService-Info.plist */,
 				673BCF902BCA4EDB00ED017D /* Assets.xcassets */,
 				673BCF8C2BCA4EDA00ED017D /* TToMeApp.swift */,
 				673BCFF92BCD474000ED017D /* Model */,
@@ -225,11 +222,12 @@
 			};
 			buildConfigurationList = 673BCF842BCA4EDA00ED017D /* Build configuration list for PBXProject "TToMe" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 673BCF802BCA4EDA00ED017D;
 			packageReferences = (
@@ -253,7 +251,6 @@
 			files = (
 				673BCF942BCA4EDB00ED017D /* Preview Assets.xcassets in Resources */,
 				673BCF912BCA4EDB00ED017D /* Assets.xcassets in Resources */,
-				673BCFB72BCB574900ED017D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

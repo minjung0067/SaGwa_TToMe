@@ -6,9 +6,7 @@ struct ReceiveView: View {
     
     @EnvironmentObject var viewModel: JsonModel
     
-    //let chat: Chat
-    
-//    @StateObject var viewModel = JsonModel()
+
     
     
     @State private var query = ""
