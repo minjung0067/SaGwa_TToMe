@@ -1,6 +1,7 @@
 //
-//  SignUpView.swift
-//  TToMe
+//  NameView.swift
+//
+//  이름을 설정하는 화면, SignUpView의 왼쪽 selected 화면
 //
 //  Created by Minjung Lee on 4/16/24.
 //
@@ -66,7 +67,6 @@ struct NameView: View {
                             .opacity(name.isEmpty ? 0.4 : 1)
                         
                     }
-                    //.alert(, isPresented: <#T##Binding<Bool>#>, actions: <#T##() -> View#>)
                     .padding(.all, 4)
                     .disabled(name.isEmpty)
                 }
@@ -82,7 +82,7 @@ struct NameView: View {
         
 
     }
-    
+    // MARK: - 이름이 작성되면 메세지타임 picker로의 이동이 활성화
     func saveName() {
         print("savename")
         authPath = 1
@@ -92,7 +92,7 @@ struct NameView: View {
     }
 }
 
-
+// MARK: - 더 이상 안 쓰일 imagePicker
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) private var presentationMode
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
@@ -129,7 +129,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 
 
-//터치로 키보드 내리기
+// MARK: - 터치로 키보드 내리기 
 extension UIApplication {
     func addTapGestureRecognizer() {
         guard let window = windows.first else { return }

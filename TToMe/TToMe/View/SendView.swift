@@ -1,3 +1,11 @@
+//
+//  SendView.swift
+//
+//  메세지 보내기 화면
+//
+//  Created by Minjung Lee on 4/15/24.
+//
+
 import SwiftUI
 
 struct SendView: View {
@@ -18,11 +26,11 @@ struct SendView: View {
     var body: some View {
         
             VStack {
-                // Search view
+                // 받는 사람 적히는 칸에 default로 또나가 이미 적혀있게
                 HStack {
                     HStack {
                         Image(systemName: "paperplane")
-                
+                        
                         TextField("받는 사람 : 또나", text: $placeholder, onEditingChanged: { isEditing in
                         }, onCommit: {
                             print("onCommit")
@@ -38,10 +46,12 @@ struct SendView: View {
                 }
                 .padding(.horizontal)
                 
+                
                 HStack{
                     ZStack{
                         if isSent {
                             HStack(alignment: .center){
+                                // 메세지 전송 시 채팅 화면에서 보여지는 문구
                                 Text("오늘의 메세지를 이미 전송했어요")
                                     .font(.system(size: 13))
                                     .foregroundColor(.gray)
@@ -66,6 +76,7 @@ struct SendView: View {
             .navigationBarTitleDisplayMode(.large)
     }
     
+    // MARK: - 화면 하단 메세지 전송하는 부분
     func toolbarView() -> some View {
         VStack {
             let height: CGFloat = 42
@@ -94,6 +105,7 @@ struct SendView: View {
         .background(.thickMaterial)
     }
     
+    // MARK: - 메세지 전송 버튼 눌렀을 때 호출되는 함수
     func sendMessage(){
         print("sendMessage 클릭")
     

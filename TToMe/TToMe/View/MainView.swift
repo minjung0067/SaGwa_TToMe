@@ -1,6 +1,7 @@
 //
 //  MainView.swift
-//  TToMe
+//
+//  또나 메인 화면
 //
 //  Created by Minjung Lee on 4/15/24.
 //
@@ -140,6 +141,7 @@ struct MainView: View {
                 
     }
     
+    // MARK: - user 구조체
     var card: some View{
         RoundedRectangle(cornerRadius: 30)
             .fill(.white)
@@ -155,6 +157,8 @@ struct MainView: View {
             }
     }
     
+    
+    // MARK: - body
     var body: some View {
         NavigationStack {
             ZStack{

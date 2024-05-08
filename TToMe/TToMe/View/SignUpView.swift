@@ -1,6 +1,7 @@
 //
 //  SignUpView.swift
-//  TToMe
+//
+//  처음 회원가입 시, 이후 수정 시 사용하는 마이페이지 화면
 //
 //  Created by Minjung Lee on 4/16/24.
 //
@@ -48,7 +49,7 @@ struct SignUpView: View {
             .padding(.horizontal)
             
             
-            // Mark: picker
+            // MARK: - picker
             Picker(selection: $authPath, label: Text("name or msg time")) {
                 Text("이름").tag(0)
                 Text("메세지 타임").tag(1)
@@ -58,7 +59,7 @@ struct SignUpView: View {
             .padding(.top, 30)
             .disabled(isPickerDisable)
 
-
+            // MARK: - picker 분기되는 부분
             if authPath == 0 {
                 NameView(isPickerDisable: $isPickerDisable, name: $name,
                          authPath: $authPath)

@@ -1,3 +1,11 @@
+//
+//  JsonModel.swift
+//
+//  json 파일을 다룸
+//
+//  Created by Minjung Lee on 4/15/24.
+//
+
 
 import SwiftUI
 
@@ -12,16 +20,18 @@ class JsonModel: ObservableObject {
         fetchData()
     }
     
+    // MARK: - json 파일 있는지 check
     func fetchData() {
         readUser(filename: "userData.json")
         readMessage(filename: "chatData.json")
     }
 
+    // MARK: - userData.json 읽는 함수
     func readUser(filename: String) {
         var data: Data?
         var file: URL
         
-        //get file directory
+        // get file directory
         do {
             file = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 .appendingPathComponent(filename)
@@ -29,7 +39,7 @@ class JsonModel: ObservableObject {
             fatalError("Coudn't read or create \(filename): \(error.localizedDescription)")
         }
         
-        //get data
+        // get data
         do {
             data = try Data(contentsOf: file)
         } catch {
@@ -48,6 +58,7 @@ class JsonModel: ObservableObject {
             fatalError("Couldn't parse \(filename) as \([User].self):\n\(error)")
         }
     }
+    // MARK: - chatData.json 읽는 함수
     func readMessage(filename: String) {
         var data: Data?
         var file: URL
@@ -80,7 +91,7 @@ class JsonModel: ObservableObject {
         }
     }
     
-    // Write data to JSON
+    // MARK: - userData.json 쓰는 함수
     func writeUser(filename: String) {
         var file: URL
         do {
@@ -101,7 +112,7 @@ class JsonModel: ObservableObject {
         }
     }
     
-    // Write data to JSON
+    // MARK: - chatData.json 에 채팅 내역 쓰는 함수
     func writeChat(filename: String) {
         var file: URL
         do {
@@ -121,8 +132,9 @@ class JsonModel: ObservableObject {
             print("Couldn’t save new entry to \(filename), \(error.localizedDescription)")
         }
     }
-    
+    // MARK: - 채팅 정렬 + filter를 사용한 검색 기능
     func getSortedFilteredChats(query: String) -> [JsonModel.Chat] {
+        // 날짜로 정렬
         let sortedChats = chatData.sorted {
 //            guard let date1 = $0.writtenAt else {return false}
 //            guard let date2 = $1.writtenAt else {return false}
@@ -134,16 +146,19 @@ class JsonModel: ObservableObject {
             return sortedChats
         }
         return sortedChats.filter { chat in
+            // filter 기능으로 채팅 검색
             chat.msg.lowercased().contains(query.lowercased())
+            
         }
     }
-    
+    // MARK: - 전송 버튼 눌렀을 때 호출되는 함수
     func sendMessage(_ text: String) {
         //guard !text.isEmpty else { return }
 //        if text.isEmpty { return }
         chatData.append(JsonModel.Chat(msg: text, writtenAt: .now))
         writeChat(filename: "chatData.json")
     }
+    // MARK: - MessageTimeView에서 버튼 눌렀을 때 호출되는 함수
     func saveUser(_ name: String, _ messageTime: Date) {
         //guard !text.isEmpty else { return }
 //        if text.isEmpty { return }
@@ -153,12 +168,15 @@ class JsonModel: ObservableObject {
     // saveUser(name, time)
     // saveUser(name: name, time: time)
     
+    
+    // MARK: - User 구조체
     struct User: Codable, Identifiable {
         var id: UUID = UUID()
         var name: String
         var messageTime: Date
     }
     
+    // MARK: - Chat 구조체
     struct Chat: Codable, Identifiable {
         var id: UUID = UUID()
         var msg: String

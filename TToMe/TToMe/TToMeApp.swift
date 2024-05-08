@@ -1,6 +1,6 @@
 //
 //  TToMeApp.swift
-//  TToMe
+//  TToMe 앱
 //
 //  Created by Minjung Lee on 4/13/24.
 //
@@ -11,13 +11,14 @@ import SwiftUI
 
 @main
 struct TToMeApp: App {
-    // json 형태로 저장되는 데이터 - 1. userdata, 2. chatdata
+    // MARK: json 형태로 저장되는 데이터 - 1. userdata, 2. chatdata
     @StateObject var jsonModel = JsonModel()
     
     
     
     var body: some Scene {
         WindowGroup {
+            // MARK: - 분기점
             /* userData 없다 -> 가입 위해 SignUpView로
                 userData 있다 > 앱 실행 시 바로 메인으로 */
             NavigationStack {
